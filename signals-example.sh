@@ -2,6 +2,7 @@
 # type "finish" to exit
 
 stty -echoctl # hide ^C
+stty sane # enable ^C
 
 # function called by trap
 other_commands() {
