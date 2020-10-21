@@ -2,7 +2,6 @@
 # type "finish" to exit
 
 stty -echoctl # hide ^C
-stty sane # enable ^C
 
 # function called by trap
 other_commands() {
@@ -20,6 +19,11 @@ input="$@"
 while true; do
     printf "\rType a command >>> "
     read input
-    [[ $input == finish ]] && break
+    if [[ $input == finish ]]
+    then
+    	stty sane # enable ^C
+    	exit
+	fi
+    	
     bash -c "$input"
 done
