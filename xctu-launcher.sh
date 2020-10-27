@@ -16,7 +16,7 @@ handler(){
 	
 	# Set old gnome theme
 	echo "[>] Changing the theme back to the original value ..."
-	gsettings set org.gnome.desktop.interface gtk-theme ${OLD_VALUE}
+	gsettings set org.gnome.desktop.interface gtk-theme "${OLD_VALUE}"
 	
 	exit
 }
